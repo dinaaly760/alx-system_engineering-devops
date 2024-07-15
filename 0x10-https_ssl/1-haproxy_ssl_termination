@@ -40,7 +40,6 @@ defaults
 
 frontend LBfrontend
         bind *:80
-        redirect scheme https code 301 if !{ ssl_fc }
         default_backend servers
 
 frontend www-https
@@ -53,8 +52,8 @@ frontend www-https
 backend servers
         balance roundrobin
         redirect scheme https if !{ ssl_fc }
-        server server_1 104.196.155.240:80
-        server server_2 34.74.146.120:80
+        server server_1 34.74.146.120:80
+        server server_2 104.196.155.240:80
 
 backend letsencrypt-backend
         server letsencrypt 127.0.0.1:13579
