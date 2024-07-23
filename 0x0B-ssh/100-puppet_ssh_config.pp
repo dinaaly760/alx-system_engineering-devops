@@ -1,4 +1,4 @@
-lient configuration file (w/ Puppet)
+# Client configuration file
 file_line { 'Identity file':
   ensure => 'present',
   path   => '/etc/ssh/ssh_config',
